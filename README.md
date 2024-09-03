@@ -22,17 +22,17 @@ $ codeowners -o my-org
 [
   {
     "repo": "my-repo-1",
-    "has_codeowners": true,
+    "exists": true,
     "content": "* @bob\n"
   },
   {
     "repo": "my-repo-2",
-    "has_codeowners": true,
+    "exists": true,
     "content": "* @alice\n"
   },
   {
     "repo": "my-repo-3",
-    "has_codeowners": false
+    "exists": false
   }
 ]
 ```

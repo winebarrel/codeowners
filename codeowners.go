@@ -17,9 +17,9 @@ type Options struct {
 }
 
 type Codeowners struct {
-	Repo          string `json:"repo"`
-	HasCODEOWNERS bool   `json:"has_codeowners"`
-	Content       string `json:"content,omitempty"`
+	Repo    string `json:"repo"`
+	Exists  bool   `json:"exists"`
+	Content string `json:"content,omitempty"`
 }
 
 func List(ctx context.Context, options *Options) ([]*Codeowners, error) {
@@ -71,8 +71,8 @@ func getCodeowners(ctx context.Context, client *github.Client, repo *github.Repo
 	raw, _, _, err := client.Repositories.GetContents(ctx, *repo.Owner.Login, *repo.Name, ".github/CODEOWNERS", &github.RepositoryContentGetOptions{})
 
 	co := &Codeowners{
-		Repo:          *repo.Name,
-		HasCODEOWNERS: false,
+		Repo:   *repo.Name,
+		Exists: false,
 	}
 
 	if err != nil {
@@ -92,7 +92,7 @@ func getCodeowners(ctx context.Context, client *github.Client, repo *github.Repo
 	}
 
 	co.Content = string(content)
-	co.HasCODEOWNERS = true
+	co.Exists = true
 
 	return co, nil
 }
