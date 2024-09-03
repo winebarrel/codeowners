@@ -14,6 +14,7 @@ Flags:
   -u, --user=STRING     Organization name.
   -o, --org=STRING      Organization name.
       --token=STRING    Authentication token for github.com API requests ($GITHUB_TOKEN).
+  -y, --[no-]yaml       Output as YAML.
       --version
 ```
 
