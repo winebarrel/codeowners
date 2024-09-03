@@ -1,5 +1,7 @@
 # codeowners
 
+[![CI](https://github.com/winebarrel/codeowners/actions/workflows/ci.yml/badge.svg)](https://github.com/winebarrel/codeowners/actions/workflows/ci.yml)
+
 List up CODEOWNERS of all repositories.
 
 ## Usage
