@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strings"
 
 	"github.com/alecthomas/kong"
 	"github.com/goccy/go-yaml"
@@ -49,8 +48,8 @@ func main() {
 		output = string(raw)
 	} else {
 		raw, _ := json.MarshalIndent(cos, "", "  ")
-		output = string(raw)
+		output = string(raw) + "\n"
 	}
 
-	fmt.Println(strings.TrimSpace(output))
+	fmt.Print(output)
 }
