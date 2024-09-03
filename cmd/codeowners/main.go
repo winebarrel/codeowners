@@ -6,8 +6,10 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 
 	"github.com/alecthomas/kong"
+	"github.com/goccy/go-yaml"
 	"github.com/winebarrel/codeowners"
 )
 
@@ -40,6 +42,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-	raw, _ := json.MarshalIndent(cos, "", "  ")
-	fmt.Println(string(raw))
+	var output string
+
+	if options.Yaml {
+		raw, _ := yaml.MarshalWithOptions(cos, yaml.UseLiteralStyleIfMultiline(true))
+		output = string(raw)
+	} else {
+		raw, _ := json.MarshalIndent(cos, "", "  ")
+		output = string(raw)
+	}
+
+	fmt.Println(strings.TrimSpace(output))
 }

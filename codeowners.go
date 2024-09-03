@@ -14,12 +14,13 @@ type Options struct {
 	User  string `short:"u" xor:"user,org" required:"" help:"Organization name."`
 	Org   string `short:"o" xor:"org" required:"" help:"Organization name."`
 	Token string `required:"" env:"GITHUB_TOKEN" help:"Authentication token for github.com API requests."`
+	Yaml  bool   `negatable:"" short:"y" help:"Output as YAML."`
 }
 
 type Codeowners struct {
-	Repo    string `json:"repo"`
-	Exists  bool   `json:"exists"`
-	Content string `json:"content,omitempty"`
+	Repo    string `json:"repo" yaml:"repo"`
+	Exists  bool   `json:"exists" yaml:"exists"`
+	Content string `json:"content,omitempty" yaml:"content,omitempty"`
 }
 
 func List(ctx context.Context, options *Options) ([]*Codeowners, error) {
