@@ -11,7 +11,7 @@ import (
 )
 
 type Options struct {
-	User  string `short:"u" xor:"user,org" required:"" help:"Organization name."`
+	User  string `short:"u" xor:"user,org" required:"" help:"User name."`
 	Org   string `short:"o" xor:"org" required:"" help:"Organization name."`
 	Token string `required:"" env:"GITHUB_TOKEN" help:"Authentication token for github.com API requests."`
 	Yaml  bool   `negatable:"" short:"y" help:"Output as YAML."`

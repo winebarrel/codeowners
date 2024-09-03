@@ -11,7 +11,7 @@ Usage: codeowners --user=STRING --org=STRING --token=STRING [flags]
 
 Flags:
   -h, --help            Show help.
-  -u, --user=STRING     Organization name.
+  -u, --user=STRING     User name.
   -o, --org=STRING      Organization name.
       --token=STRING    Authentication token for github.com API requests ($GITHUB_TOKEN).
   -y, --[no-]yaml       Output as YAML.
