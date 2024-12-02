@@ -2,10 +2,10 @@ module github.com/winebarrel/codeowners
 
 go 1.23.0
 
-require github.com/alecthomas/kong v1.4.0
+require github.com/alecthomas/kong v1.5.0
 
 require (
-	github.com/goccy/go-yaml v1.14.3
+	github.com/goccy/go-yaml v1.15.4
 	github.com/gofri/go-github-pagination v1.0.0
 )
 
