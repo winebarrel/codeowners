@@ -5,7 +5,7 @@ go 1.23.0
 require github.com/alecthomas/kong v1.6.0
 
 require (
-	github.com/goccy/go-yaml v1.15.7
+	github.com/goccy/go-yaml v1.15.10
 	github.com/gofri/go-github-pagination v1.0.0
 )
 
