@@ -2,7 +2,7 @@ module github.com/winebarrel/codeowners
 
 go 1.23.0
 
-require github.com/alecthomas/kong v1.12.1
+require github.com/alecthomas/kong v1.13.0
 
 require (
 	github.com/goccy/go-yaml v1.18.0
